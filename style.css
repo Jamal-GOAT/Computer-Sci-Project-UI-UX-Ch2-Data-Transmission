@@ -42,7 +42,7 @@ nav {
 }
 
 nav a {
-    padding: 5px 10px;
+    padding: 7px;
     position: relative;
     text-align: center;
     height: clamp(50px, 8vw, 70px);
@@ -179,6 +179,14 @@ nav a.active {
     opacity: 0;
 }
 
+.home-section2 .title{
+    font-size: clamp(20px, 3.3vw, 27px);
+}
+
+.home-section2 p {
+    font-size: clamp(11px, 2.4vw, 15px);
+}
+
 .home-section2 .wrapper div {
     transition: all 0.5s ease-in-out;
 }
@@ -255,9 +263,10 @@ nav a.active {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 10px;
+    border: 1px solid var(--primary);
     background-color: var(--cards);
     transition: all 0.3s ease;
     font-size: clamp(11px, 2.1vw, 14px);
@@ -284,9 +293,27 @@ nav a.active {
     gap: 100px;
 }
 
+.routers .wrapper {
+    position: relative;
+}
+
+.routers .vertical-line {
+    position:absolute;
+    content: "";
+    width: 3px;
+    height: 100px;
+    background-color: var(--primary);
+    display: flex;
+    margin-top: 25px;
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top;
+    animation: verticalLine 10s linear infinite;
+}
+
 .routers .router-box {
-    height: 70px;
-    width: 140px;
+    height: 50px;
+    width: 100px;
     display: flex;
     border: 1px solid black;
     align-items: center;
@@ -306,7 +333,7 @@ nav a.active {
     left: 100%;
     top: 50%;
     height: 2px;
-    width: 126px;
+    width: 50px;
     transform: scale(0);
     transform-origin: left;
 
@@ -322,13 +349,45 @@ nav a.active {
     right: 100%;
     top: 50%;
     height: 2px;
-    width: 126px;
+    width: 50px;
     transform: scale(0);
     transform-origin: right;
     z-index: 9;
 
     background-color: var(--primary);
     animation: branch 10s linear infinite;
+}
+
+.user-box {
+    display: flex;
+    justify-content: center;
+    margin: 75px auto 0px auto;
+    padding: 10px 15px;
+    border: 1px solid var(--primary);
+    width: 150px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.user-box p {
+    font-weight: bold;
+    z-index: 9;
+    animation: userText 10s linear infinite;
+}
+
+.user-box::before {
+    position: absolute;
+    content: "";
+    display: flex;
+    margin: auto;
+    background-color: var(--primary);
+    width: 200px;
+    height: 100px;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0;
+    animation: userFill 10s linear infinite;
 }
 
 footer {
@@ -346,6 +405,10 @@ footer h2 {
     font-size: clamp(20px, 4vw, 30px);
     font-weight: 600;
     margin-bottom: 10px;
+}
+
+footer p {
+    font-size: clamp(11px, 2.4vw, 15px);
 }
 
 footer .footer-line {
@@ -390,12 +453,10 @@ footer .footer-line {
 
 @keyframes leftPackage {
     0%, 15% {
-        border: none;
         margin: 0px;
     }
 
     20%, 100% {
-        border: 1px solid var(--primary);
         border-radius: 10px;
         margin-right: 20px;
     }
@@ -411,12 +472,10 @@ footer .footer-line {
 
 @keyframes rightPackage {
     0%, 15% {
-        border: none;
         margin: 0px;
     }
 
     20%, 100% {
-        border: 1px solid var(--primary);
         border-radius: 10px;
         margin-left: 20px;
     }
@@ -455,5 +514,39 @@ footer .footer-line {
     85%, 100% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@keyframes verticalLine {
+    0%, 84% {
+        transform: scaleY(0);
+        opacity: 0;
+    } 
+
+    90%, 100% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes userFill {
+    0%, 90% {
+        transform: scaleY(0);
+        opacity: 1;
+    }
+
+    95%, 100% {
+        transform: scaleY(2);
+        opacity: 1;
+    }
+}
+
+@keyframes userText {
+    0%, 90% {
+        color: black;
+    }
+
+    95%, 100% {
+        color: white;
     }
 }
