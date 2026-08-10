@@ -51,17 +51,61 @@
         <div class="user-box"><p>User</p></div>
     </div>
     <div class="dp-section1">
-        <h1>How Data Travels</h1>
-        <p>A packet goes through several key stages.</p>
+        <h1 class="dp-section1-heading">How Data Travels</h1>
+        <p class="dp-section1-subheading">A packet goes through several key stages.</p>
         <div class="cards">
-            <div class="card">Card1</div>
-            <div class="card">Card2</div>
-            <div class="card">Card3</div>
-            <div class="card">Card4</div>
+            <div class="card">
+                <h1 class="number">1.📱</h1>
+                <h2 class="heading">Data is Created</h2>
+                <p class="content">When we send a message, image, video, or requests, our device converts the information into digital datas that can be sent through a network</p>
+            </div>
+            <div class="card">
+                <h1 class="number">2.📦</h1>
+                <h2 class="heading">Data Is Split Into Packets</h2>
+                <p class="content">Since the amount of data can be big, it is divided into smaller pieces called packets. Each packet contains part of the original data along the information needed to help it reach its destination.</p>
+            </div>
+            <div class="card">
+                <h1 class="number">3.📡</h1>
+                <h2 class="heading">Packets Travel Through Routers</h2>
+                <p class="content">Packets travel across the network through routers. Routers examine each packet's and decide where to forward it. Different packets can take different routes, depending on which routers are the fastest currently.</p>
+            </div>
+            <div class="card">
+                <h1 class="number">4.🔗</h1>
+                <h2 class="heading">Data Is Reassembled</h2>
+                <p class="content">When the packets reach the destination, the receiving device puts the back together in the correct order. The original data can then be displayed or used by the receiver.</p>
+            </div>
         </div>
     </div>
 
-
+    <div class="dp-section2">
+        <div class="cards">
+            <div class="card" id="title">
+                <h1>Data Packet</h1>
+            </div>
+            <div class="card" id="header">
+                <div class="wrapper">
+                    <h1>Header</h1>
+                    <h1>⬇</h1>
+                </div>
+                <p>The header contains information about the packet, such as its source and destination addresses. It helps routers determine where the packet needs to go and allows the receiver to identify and correctly process the packet.</p>
+            </div>
+            <div class="card" id="payload">
+                <div class="wrapper">
+                    <h1>Payload</h1>
+                    <h1>⬇</h1>
+                </div>
+                <p>The payload contains the actual data being transmitted, such as part of a message, image, or file. Large data is divided into smaller packets, with each packet carrying a portion of the original data in its payload.</p>
+            </div>
+            <div class="card" id="trailer">
+                <div class="wrapper">
+                    <h1>Trailer</h1>
+                    <h1>⬇</h1>
+                </div>
+                
+                <p>The trailer marks the end of the packet and contains error-checking information. It helps the receiver detect whether the packet was damaged during transmission.</p>
+            </div>
+        </div>
+    </div>
 
     <script src="../script.js"></script>
 </body>
