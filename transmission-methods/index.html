@@ -37,21 +37,88 @@
             <div class="serialtext">
                 <h1>Serial Transmission</h1>
                 <div class="illustration">
-
+                    <div class="wrapper">
+                        <div class="box-user">
+                            <p>A</p>
+                        </div>
+                        <div class="line"></div>
+                        <div class="box-user">
+                            <p>B</p>
+                        </div>
+                        <div class="box" id="b1">1</div>
+                        <div class="box" id="b2">0</div>
+                    </div>
                 </div>
                 <p>Serial transmission sends data one bit at a time through a single communication channel. The bits are sent sequentially, one after another, until the complete data is transmitted. It is simpler and cheaper to implement, and it is commonly used in devices such as USB connections.</p>
             </div>
             <div class="paralleltext">
                 <h1>Parallel Transmission</h1>
                 <div class="illustration">
-
+                    <div class="wrapper">
+                        <div class="box-user">
+                            <p>A</p>
+                        </div>
+                        <div class="lines">
+                            <div class="line" id="l1"></div>
+                            <div class="line" id="l2"></div>
+                            <div class="line" id="l3"></div>
+                        </div>
+                        <div class="box-user">
+                            <p>B</p>
+                        </div>
+                        <div class="box" id="b1">1</div>
+                        <div class="box" id="b2">1</div>
+                        <div class="box" id="b3">0</div>
+                    </div>
                 </div>
                 <p>Parallel transmission sends multiple bits at the same time through several communication channels. Each bit can travel throguh its own wire, allowing a group of bits to be transmitted at once. It is generally quicker but can be expensive and harder to implement. It is used mostly in CPU data and address buses and RAM memory buses.</p>
             </div>
         </div>
         
-        
+        <div class="duplex">
+            <div class="title">
+                <h1 class="heading">Communication Modes</h1>
+                <p class="subheading">Devices can communicate in different ways depending on the direction in which data is transmitted.</p>
+            </div>
+            
+            <img src="../images/duplex.png" alt="" style="width: 80vw;max-width:600px;display:flex;margin: 50px auto;border-radius:25px;border: 2px solid var(--primary);">
+            <div class="duplex-cards">
+                <div class="card">
+                    <h1 class="number">01</h1>
+                    <div class="content">
+                        <h2>Simplex Transmission</h2>
+                        <p>Data can only travel in one direction. The receiving device cannot send data back to the sender.</p>
+                        <h2>Example: Keyboard → Computer</h2>
+                    </div>
+                </div>
 
+                <div class="card">
+                    <h1 class="number">02</h1>
+                    <div class="content">
+                        <h2>Half-Duplex Transmission</h2>
+                        <p>Data can travel in both directions, but only one device can transmit at a time.</p>
+                        <h2>Example: Walkie-talkie</h2>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h1 class="number">03</h1>
+                    <div class="content">
+                        <h2>Full-Duplex Transmission</h2>
+                        <p>Data can travel in both directions at the same time, allowing both devices to send and receive simultaneously.</p>
+                        <h2>Example: Telephone call</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="usb">
+        <div class="card">
+            <h1 class="heading">What is USB?</h1>
+            <p class="subheading">USB is a common standard used to connect devices and transfer data between them.</p>
+        </div>
     </div>
 
     <script src="../script.js"></script>

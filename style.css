@@ -607,7 +607,7 @@ nav a.active {
 
 .serial-vs-parallel .serialtext {
     position: absolute;
-    top: 80px;
+    top: 160px;
     left: 0;
 
     opacity: 0;
@@ -638,6 +638,182 @@ nav a.active {
 .serial-vs-parallel .card .serialtext p, .serial-vs-parallel .card .paralleltext p {
     margin-top: 0px;
 } 
+
+.serialtext .illustration .wrapper {
+    display: flex;
+    padding: 20px;
+    width: 400px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0px;
+    position: relative;
+}
+
+.serialtext .illustration .wrapper .box {
+    position: absolute;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    align-self: center;
+    border: 1px solid black;
+    background-color: white;
+    left: 60px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.serialtext .illustration .wrapper .box#b1 {
+    animation: box1 5s linear infinite;
+}
+
+.serialtext .illustration .wrapper .box#b2 {
+    animation: box2 5s linear infinite;
+}
+
+.serialtext .illustration .wrapper .box-user {
+    width: 60px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    height: 60px;
+}
+
+.serialtext .illustration .wrapper .box-user p {
+    margin: 0;
+}
+
+.serialtext .illustration .wrapper .line {
+    display: block;
+    height: 2px;
+    width: 200px;
+    background-color: var(--primary);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.paralleltext .illustration .wrapper {
+    display: flex;
+    padding: 20px;
+    width: 400px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0px;
+    position: relative;
+}
+
+.paralleltext .illustration .wrapper .line {
+    display: block;
+    height: 2px;
+    width: 200px;
+    background-color: var(--primary);
+}
+
+.paralleltext .illustration .wrapper .line#l1 {
+    margin-top: 30px;
+}
+
+.paralleltext .illustration .wrapper .line#l2 {
+    margin-top: 60px;
+}
+
+.paralleltext .illustration .wrapper .line#l3 {
+    margin-top: 60px;
+}
+
+.paralleltext .illustration .box-user {
+    min-width: 60px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    height: 180px;
+}
+
+.paralleltext .illustration .wrapper .box-user p {
+    margin: 0;
+}
+
+.paralleltext .illustration .wrapper .box {
+    position: absolute;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+    left: 60px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.paralleltext .box#b1 {
+    top: 30px;
+}
+
+.paralleltext .box#b2 {
+    top: 90px;
+}
+
+.paralleltext .box#b3 {
+    top: 150px;
+}
+
+.paralleltext .box {
+    animation: box1 4s linear infinite;
+}
+
+.duplex .title {
+    filter: drop-shadow(0px 10px 2px rgba(0, 0, 0, 0.25));
+}
+
+.duplex .title h1 {
+    font-size: clamp(30px, 5vw, 50px);
+}
+
+.duplex .title p {
+    font-size: clamp(12px, 2vw, 17px);
+}
+
+.duplex .duplex-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 50px 30px;
+}
+.duplex .duplex-cards .card{
+    background-image: linear-gradient(45deg, var(--payload), var(--trailer));
+    color: white;
+    max-width: 700px;
+    margin: 50px auto;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.duplex .duplex-cards .card.visible {
+    opacity: 1;
+    visibility: visible;
+    animation: bouncePop 0.6s ease;
+}
+
+.duplex .duplex-cards .card .number {
+    font-size: clamp(30px, 5vw, 50px);
+}
+
+.duplex .duplex-cards .card .content {
+    font-size: clamp(12px, 2vw, 17px);
+}
 
 footer {
     background-color: var(--footer);
@@ -817,5 +993,56 @@ footer .footer-line {
         opacity: 1;
         transform: scale(1);
         visibility: visible;
+    }
+}
+
+
+@keyframes box1 {
+    0% {
+        transform: translateX(0px);
+    }
+
+    0%, 10% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    15%, 55% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    60%, 100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    70% {
+        transform: translateX(240px);
+    }
+}
+
+@keyframes box2 {
+    25% {
+        transform: translateX(0px);
+    }
+
+    0%, 30% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    35%, 75% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    80%, 100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    90% {
+        transform: translateX(240px);
     }
 }
