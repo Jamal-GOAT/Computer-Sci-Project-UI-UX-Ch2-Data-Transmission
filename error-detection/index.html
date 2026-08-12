@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <a href="../">Home</a>
+        <a href="../data-packets/">Data Packets</a>
+        <a href="../transmission-methods/">Transmission Methods</a>
+        <a href="" class="active">Error Detection</a>
+        <a href="../encryption/">Encryption</a>
+    </nav>
+
+    <div class="error-detection-hero">
+        <h1 class="error-detection-heading">Error Detection</h1>
+        <p class="error-detection-subheading">Errors can occur when data is transmitted, so error detection methods help identify corrupted or incorrect data.</p>
+    </div>
+
+    <div class="error-overview">
+        <div class="title">
+            <h2 class="heading">How Does Error Detection Work?</h1>
+            <p class="subheading">
+                Error detection checks transmitted data to identify whether it has been corrupted.
+            </p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h1 class="number">01</h1>
+                <div class="content">
+                    <h2>Send Data</h2>
+                    <p>The original data is sent from one device to another.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="number">02</h1>
+                <div class="content">
+                    <h2>Check Data</h2>
+                    <p>The receiving device checks the data for possible errors.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="number">03</h1>
+                <div class="content">
+                    <h2>Detect Error</h2>
+                    <p>If the data does not match the expected result, an error is detected.</p>
+                </div>
+            </div>    
+        </div>
+    </div>
+
+    <div class="parity">
+        <div class="title">
+            <h1 class="heading">Parity Check</h1>
+            <p class="subheading">A parity check adds an extra bit to data to help detect errors during transmission.</p>
+        </div>
+
+        <div class="parity-card">
+            <h2>Even Parity</h2>
+
+            <div class="bits">
+                <div class="bit">1</div>
+                <div class="bit">0</div>
+                <div class="bit">1</div>
+                <div class="bit">1</div>
+                <div class="bit">0</div>
+                <div class="bit">1</div>
+                <div class="bit">0</div>
+                <div class="bit" id="parity-bit">0</div>
+            </div>
+
+            <p class="label">Data with parity bit</p>
+
+            <div class="arrow">
+                <p>↓</p>
+            </div>
+
+            <div class="bits">
+                <div class="bit">1</div>
+                <div class="bit">0</div>
+                <div class="bit" id="error-bit">0</div>
+                <div class="bit">1</div>
+                <div class="bit">0</div>
+                <div class="bit">1</div>
+                <div class="bit">0</div>
+                <div class="bit" id="parity-bit">0</div>
+            </div>
+
+            <p class="label">Received data</p>
+
+            <div class="result">
+                <p>Error Detected</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="../script.js"></script>
+</body>
+<footer>
+    <h2>DataFlow</h2>
+    <p>IGCSE Computer Science - Chapter 2: Data Transmission</p>
+
+    <div class="footer-line"></div>
+
+    <p class="copyright">&copy; 2026 DataFlow by Nathan H 9F</p>
+</footer>
+</html>
