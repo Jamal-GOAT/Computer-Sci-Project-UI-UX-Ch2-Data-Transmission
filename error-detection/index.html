@@ -102,6 +102,52 @@
             </div>
         </div>
     </div>
+
+    <div class="echo-check">
+    <div class="title">
+        <h1 class="heading">Echo Check</h1>
+        <p class="subheading">Echo check verifies data by sending the received data back to the sender for comparison.</p>
+    </div>
+
+    <div class="illustration">
+        <div class="device" id="sender">
+            <p>Sender</p>
+        </div>
+
+        <div class="connection">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+        </div>
+
+        <div class="device" id="receiver">
+            <p>Receiver</p>
+        </div>
+
+        <div class="data-box" id="data1">
+            <p>10110100</p>
+        </div>
+
+        <div class="data-box" id="data2">
+            <p>10110100</p>
+        </div>
+    </div>
+
+    <div class="echo-result">
+        <h2>Data Comparison</h2>
+
+        <div class="comparison">
+            <p>Original: 10110100</p>
+            <p>Echo: 10110100</p>
+        </div>
+
+        <div class="result">
+            <p>✓ Data matches, No error detected</p>
+        </div>
+        <p class="description">In an echo check, the receiver sends the received data back to the sender. The sender compares the echoed data with the original data. If the two values are different, an error has occurred during transmission.</p>
+    </div>
+
+    
+</div>
     
 
     <script src="../script.js"></script>

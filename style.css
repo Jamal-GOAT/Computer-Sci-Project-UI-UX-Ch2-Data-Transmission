@@ -1127,6 +1127,147 @@ h2 {
     font-weight: 600;
 }
 
+.echo-check {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.echo-check .title {
+    padding: 0px 30px;
+}
+
+.echo-check .illustration {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 700px;
+    height: 250px;
+    margin: 30px auto 50px auto;
+    overflow: hidden;
+}
+
+.echo-check .device {
+    width: 15vw;
+    max-width: 120px;
+    height: 80px;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cards);
+    z-index: 4;
+    margin: 0px;
+    transition: all 0.3s ease;
+}
+
+.echo-check .device p {
+    margin: 0px;
+    font-weight: 600;
+    font-size: clamp(9px, 1.3vw, 13px);
+}
+
+.echo-check .connection {
+    width: 300px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+}
+
+.echo-check .connection .line {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 3px;
+    background-color: #D1D1D1;
+}
+
+.echo-check .connection #line1 {
+    top: 25px;
+}
+
+.echo-check .connection #line2 {
+    top: 55px;
+}
+
+.echo-check .data-box {
+    position: absolute;
+    width: 90px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    background-color: var(--cards);
+    z-index: 3;
+}
+
+.echo-check .data-box p {
+    margin: 0px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.echo-check #data1 {
+    top: 90px;
+    left: 90px;
+    animation: echoSend 5s linear infinite;
+}
+
+.echo-check #data2 {
+    top: 120px;
+    right: 90px;
+    animation: echoReturn 5s linear infinite;
+}
+
+.echo-check .echo-result {
+    width: 100%;
+    max-width: 600px;
+    padding: 25px 30px;
+    background-color: var(--cards);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.echo-check .echo-result h2 {
+    margin-top: 0px;
+    font-size: clamp(20px, 3.3vw, 27px);
+}
+
+.echo-check .comparison {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.echo-check .comparison p {
+    margin: 5px 0px;
+}
+
+.echo-check .result {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #F1F1F1;
+    color: var(--success);
+    margin-bottom: 50px;
+}
+
+.echo-check .result p {
+    margin: 0px;
+    font-weight: 600;
+}
+
 @media (max-width: 800px) {
     .usb-content {
         grid-template-columns: 1fr;
@@ -1462,5 +1603,47 @@ footer .footer-line {
         background-color: #E5E7EB;
         color: var(--text);
         transform: scale(1);
+    }
+}
+
+@keyframes echoSend {
+    0%, 10% {
+        transform: translateX(0px);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    45%, 50% {
+        transform: translateX(450%);
+        opacity: 1;
+    }
+
+    55%, 100% {
+        transform: translateX(450%);
+        opacity: 0;
+    }
+}
+
+@keyframes echoReturn {
+    0%, 50% {
+        transform: translateX(0px);
+        opacity: 0;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    90%, 95% {
+        transform: translateX(-450%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-450%);
+        opacity: 0;
     }
 }
