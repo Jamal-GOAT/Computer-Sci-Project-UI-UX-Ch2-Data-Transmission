@@ -14,13 +14,128 @@
         <a href="../">Home</a>
         <a href="../data-packets/">Data Packets</a>
         <a href="../transmission-methods/">Transmission Methods</a>
-        <a href="">Error Detection</a>
-        <a href="../encryption/" class="active">Encryption</a>
+        <a href="../error-detection/">Error Detection</a>
+        <a href="" class="active">Encryption</a>
     </nav>
 
     <div class="encryption-hero">
         <h1 class="encryption-heading">What is Encryption?</h1>
         <p class="encryption-subheading">Encryption is the process of converting readable data, called <b>plaintext</b>, into an unreadable form called <b>ciphertext</b>. A key is used with an encryption algorithm to transform the data, helping prevent unauthorised people from simply reading it.</b></p>
+    </div>
+
+    <div class="plaintext-vs-ciphertext">
+        <div class="title">
+            <h2>Plaintext & Ciphertext</h2>
+            <p>Plaintext is readable data before encryption. After encryption, it becomes ciphertext, which is unreadable without the correct key.</p>
+        </div>
+
+        <div class="encryption-flow">
+
+            <div class="encryption-card plaintext">
+                <div class="encryption-icon">🔓</div>
+                <h3>Plaintext</h3>
+                <div class="encryption-example">
+                    Meet at 5 PM
+                </div>
+                <span>Readable data</span>
+            </div>
+
+            <div class="encryption-sym">
+                <span>🔒</span>
+                <p>Encryption</p>
+            </div>
+
+            <div class="encryption-card ciphertext">
+                <div class="encryption-icon">🔒</div>
+                <h3>Ciphertext</h3>
+                <div class="encryption-example">
+                    X9#qP@3!...
+                </div>
+                <span>Encrypted data</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="encryption-types">
+        <div class="encryption-type-card symmetric">
+
+            <h3>Symmetric Encryption</h3>
+
+            <p>
+                Uses the same key to encrypt and decrypt data.
+            </p>
+
+            <div class="encryption-diagram">
+
+                <div class="diagram-item">
+                    <div class="key">KEY</div>
+                    <span>Same key</span>
+                </div>
+
+                <div class="diagram-arrow">→</div>
+
+                <div class="diagram-item">
+                    <div class="lock">LOCK</div>
+                    <span>Encrypt</span>
+                </div>
+
+                <div class="diagram-arrow">→</div>
+
+                <div class="diagram-item">
+                    <div class="lock">UNLOCK</div>
+                    <span>Decrypt</span>
+                </div>
+
+            </div>
+
+            <div class="encryption-info">
+                <p>Same key is used for both processes.</p>
+                <p>Fast and suitable for large amounts of data.</p>
+                <p>The key must be shared securely.</p>
+            </div>
+
+        </div>
+
+
+        <div class="encryption-type-card asymmetric">
+
+            <h3>Asymmetric Encryption</h3>
+
+            <p>
+                Uses two different keys: a public key and a private key.
+            </p>
+
+            <div class="encryption-diagram">
+
+                <div class="diagram-item">
+                    <div class="key">PUBLIC</div>
+                    <span>Public key</span>
+                </div>
+
+                <div class="diagram-arrow">→</div>
+
+                <div class="diagram-item">
+                    <div class="lock">LOCK</div>
+                    <span>Encrypt</span>
+                </div>
+
+                <div class="diagram-arrow">→</div>
+
+                <div class="diagram-item">
+                    <div class="key">PRIVATE</div>
+                    <span>Private key</span>
+                </div>
+
+            </div>
+
+            <div class="encryption-info">
+                <p>Public key can be shared with anyone.</p>
+                <p>Private key must be kept secret.</p>
+                <p>More secure for exchanging keys, but slower.</p>
+            </div>
+
+        </div>
+
     </div>
 
     <script src="../script.js"></script>

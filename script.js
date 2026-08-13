@@ -1,5 +1,5 @@
 // fade in effect
-const els = document.querySelectorAll('.home-section2 .wrapper div, .dp-section1 .cards .card, .duplex .duplex-cards .card');
+const els = document.querySelectorAll('.home-section2 .wrapper div, .dp-section1 .cards .card, .duplex .duplex-cards .card, .symmetric, .asymmetric');
 
 function isInScreen() {
     els.forEach(el => {
