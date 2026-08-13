@@ -19,7 +19,6 @@ body {
     margin: 0;
     margin-top: 70px;
     overflow-x: hidden;
-    
 }
 
 * {
@@ -780,6 +779,10 @@ nav a.active {
 
 .paralleltext .box {
     animation: box1 4s linear infinite;
+}
+
+.duplex {
+    width: 100vw;
 }
 
 .duplex .title {
