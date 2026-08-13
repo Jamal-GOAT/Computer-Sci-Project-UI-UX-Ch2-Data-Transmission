@@ -221,18 +221,18 @@ nav a.active {
     text-align: center;
 }
 
-.illustration {
+.data-packets-illustration {
     margin-bottom: 70px;
 }
 
-.illustration .data {
+.data-packets-illustration .data {
     position: relative;
     width: fit-content;
     margin: 0 auto;
     margin-bottom: 350px;
 }
 
-.illustration .data .wrapper {
+.data-packets-illustration .data .wrapper {
     display: flex;
     width: fit-content;
     margin: 0 auto;
@@ -244,23 +244,25 @@ nav a.active {
     animation: wrapperPackage 10s linear infinite;
 }
 
-.illustration .data .wrapper .package-left, .illustration .data .wrapper .package-right {
+.data-packets-illustration .data .wrapper .package-left, .illustration .data .wrapper .package-right {
     display: flex;
     flex-direction: row;
     width: fit-content;
 }
 
 .package-left {
+    display: flex;
     transition: all 0.3s ease;
     animation: leftPackage 10s linear infinite;
 }
 
 .package-right {
+    display: flex;
     transition: all 0.3s ease;
     animation: rightPackage 10s linear infinite;
 }
 
-.illustration .data .wrapper .box {
+.data-packets-illustration .data .wrapper .box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -275,7 +277,7 @@ nav a.active {
     animation: dataPackets 10s linear infinite;
 }
 
-.illustration .data .text {
+.data-packets-illustration .data .text {
     position: absolute;
     inset: 0;
     display: flex;
@@ -589,6 +591,8 @@ nav a.active {
     padding: 30px 40px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+    width: 90vw;
+    min-width: 260px;
     max-width: 700px;
     text-align: center;
 }
@@ -1133,6 +1137,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 70px;
 }
 
 .echo-check .title {
@@ -1173,7 +1178,7 @@ h2 {
 }
 
 .echo-check .connection {
-    width: 300px;
+    width: 260px;
     height: 80px;
     position: relative;
     display: flex;
@@ -1267,6 +1272,21 @@ h2 {
     margin: 0px;
     font-weight: 600;
 }
+.checksum {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+.checksum .title {
+    padding: 0px 30px;
+    max-width: 850px;
+}
+
+
 
 @media (max-width: 800px) {
     .usb-content {
