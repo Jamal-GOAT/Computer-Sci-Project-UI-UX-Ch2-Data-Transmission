@@ -61,7 +61,7 @@
     <div class="parity">
         <div class="title">
             <h1 class="heading">Parity Check</h1>
-            <p class="subheading">A parity check adds an extra bit to data to help detect errors during transmission.</p>
+            <p class="subheading">A parity check adds an extra bit to data to help detect errors during transmission. For example, this even parity below adds a 0 since the number of 1 is even, then the digit 0 is added to the data. Then, after the data is transmitted, it checks again if the number of 1s is still even or not, and if it is odd, then it is corrupted. It works vice-versa for even and odd parity, except for odd parity, the extra digit is 1.</p>
         </div>
 
         <div class="parity-card">
@@ -156,20 +156,97 @@
         <div class="illustration">
             <div class="sender">
                 <div class="sender-box"><p>Sender</p></div>
+                <div class="line"></div>
                 <div class="sent-data"><p style="font-weight: bold;margin: 0px;">101101</p></div>
                 <div class="checksum-box"><p>Checksum</p></div>
+                <div class="line"></div>
                 <div class="checksummed-data"><p><span style="font-weight: bold;margin: 0px;">101101</span>, checksum</p></div>
                 <div class="receiver-box"><p>Receiver</p></div>
             </div>
 
             <div class="receiver">
                 <div class="receiver-box"><p>Receiver</p></div>
+                <div class="line"></div>
                 <div class="received-data"><p><span style="font-weight: bold;margin: 0px;">10110<span style="margin: 0px;color:var(--error)">1</span></span>, checksumvalue</p></div>
                 <div class="checksum-box"><p>Checksum</p></div>
             </div>
 
         </div>
+        <div class="checksum-result">
+            <h2>How Does the Checksum Detect the Error?</h2>
+
+            <p>
+                The sender calculates a checksum from the original data and sends it together
+                with the data. The receiver calculates the checksum again using the received data.
+            </p>
+
+            <div class="comparison">
+                <p>Original: <span style="font-weight: bold;">101101</span></p>
+                <p>Received: <span style="font-weight: bold;">10110<span style="color: var(--error)">1</span></span></p>
+            </div>
+
+            <div class="result">
+                <p>Checksums do not match, Error Detected</p>
+            </div>
+
+            <p>In this example, one bit changed during transmission. Because the received data is different, its calculated checksum will also be different from the original checksum. The receiver can therefore detect that the data was corrupted.</p>
+        </div>
     </div>
+
+    <div class="check-digit">
+    <div class="title">
+        <h1 class="heading">Check Digit</h1>
+        <p class="subheading">
+            A check digit is used to check whether entered data is correct.
+        </p>
+    </div>
+
+    <img src="../images/checkdigit.jpg" alt="">
+    <a style="margin: auto;color: var(--primary)" href="https://www.bing.com/images/search?view=detailV2&ccid=G8aJBKhW&id=3952CCDEFD1177738C5BEE0C796A049CD08915A0&thid=OIP.G8aJBKhWYZOTssBfD6ukQwHaEk&mediaurl=https%3a%2f%2f4.bp.blogspot.com%2f-BiCKuEmjgsM%2fXCn1F3N6bTI%2fAAAAAAAAALk%2fNY8UaffsYIQrxrujGSZFAqNp33ZDGWNEACLcBGAs%2fs1600%2fCheck%252Bdigit%252Bquestion.jpg&exph=322&expw=521&q=Check+Digit+Computer+Science+igcse&FORM=IRPRST&ck=426EF5D1159EA3DF99FDF3960C9AF416&selectedIndex=0&itb=0">This is an example of EAN-13 Check Digit</a>
+    
+    <div class="cards">
+        <div class="card">
+            <h1 class="number">01</h1>
+            <div class="content">
+                <h2>Calculate</h2>
+                <p>
+                    A check digit is calculated from the original data before it is entered.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h1 class="number">02</h1>
+            <div class="content">
+                <h2>Enter Data</h2>
+                <p>
+                    The data is entered, such as when a barcode is scanned.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h1 class="number">03</h1>
+            <div class="content">
+                <h2>Recalculate</h2>
+                <p>
+                    A new check digit is calculated from the data that was entered.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h1 class="number">04</h1>
+            <div class="content">
+                <h2>Compare</h2>
+                <p>
+                    The new check digit is compared with the stored check digit.
+                    If they match, the data is accepted. If they do not match, an error is detected.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
     <script src="../script.js"></script>
 </body>

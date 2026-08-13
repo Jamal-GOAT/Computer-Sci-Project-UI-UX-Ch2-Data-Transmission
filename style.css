@@ -421,6 +421,9 @@ nav a.active {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    width: 90%;
+    min-width: 270px;
+    margin: auto;
     transform: scale(0);
     opacity: 0;
     visibility: hidden;
@@ -1056,6 +1059,10 @@ h2 {
     padding: 0px 30px;
 }
 
+.parity .title p {
+    font-size: clamp(12px, 2.7vw, 14px);
+}
+
 .parity-card {
     display: flex;
     flex-direction: column;
@@ -1142,6 +1149,10 @@ h2 {
 
 .echo-check .title {
     padding: 0px 30px;
+}
+
+.echo-check .title p {
+    font-size: clamp(12px, 2.7vw, 14px);
 }
 
 .echo-check .illustration {
@@ -1289,24 +1300,180 @@ h2 {
 .checksum .illustration {    
     position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    align-items: start;
     width: fit-content;
     max-width: 700px;
-    height: 250px;
     margin: 30px auto 50px auto;
     overflow: hidden;
     text-align: center;
+    gap: 100px;
 }
 
-.checksum
+.checksum .illustration .sender, .checksum .illustration .receiver {
+    position: relative;
+}
 
+.checksum .illustration .checksummed-data, .checksum .illustration .received-data, .checksum .illustration .sent-data {
+    position: absolute;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    width: 120px;
+    padding: 5px 10px;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    opacity: 0;
+    background-color: white;
+}
 
+.checksum .illustration p {
+    font-size: 11px;
+}
+
+.checksum .illustration .sent-data {
+    top: 50px;
+    animation: checksumBox1 8s linear infinite;
+}
+
+.checksum .illustration .checksummed-data {
+    top: 225px;
+    animation: checksumBox2 8s linear infinite;
+}
+
+.checksum .illustration .received-data {
+    top: 5px;
+    animation: checksumBox3 8s linear infinite;
+}
+
+.checksum .illustration .line {
+    display: block;
+    margin: auto;
+    width: 4px;
+    height: 140px;
+    background-color: #D1D1D1;
+}
+
+.checksum .illustration .sender-box, .checksum .illustration .receiver-box, .checksum .illustration .checksum-box {
+    width: 120px;
+    height: 80px;
+    display: flex;
+    text-align: center;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.check-digit {
+    padding: 50px 30px 100px 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;;
+    justify-content: center;
+}
+
+.check-digit .title {
+    text-align: center;
+}
+
+.check-digit img {
+    margin: 20px auto;
+    border-radius: 20px;
+    border: 2px solid var(--primary);
+    width: 80vw;
+}
+
+.check-digit .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto 0px auto;
+}
+
+.check-digit .cards .card {
+    background-color: var(--cards);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.check-digit .cards .card .number {
+    color: var(--primary);
+    font-size: clamp(30px, 5vw, 45px);
+    margin: 0px 0px -5px 0px;
+}
+
+.check-digit .cards .card .content h2 {
+    font-size: clamp(18px, 3vw, 23px);
+    margin: 0px 0px 10px 0px;
+}
+
+.check-digit .cards .card .content p {
+    font-size: clamp(12px, 2vw, 15px);
+    margin: 0px;
+}
+
+.checksum-result {
+    width: 100%;
+    max-width: 700px;
+    padding: 25px 30px;
+    background-color: var(--cards);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.checksum-result h2 {
+    margin-top: 0px;
+    font-size: clamp(20px, 3.3vw, 27px);
+}
+
+.checksum-result p {
+    font-size: clamp(12px, 2vw, 15px);
+    line-height: 1.6;
+}
+
+.checksum-result .comparison {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+}
+
+.checksum-result .comparison .wrong {
+    color: var(--error);
+}
+
+.checksum-result .result {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #F1F1F1;
+    color: var(--error);
+}
+
+.checksum-result .result p {
+    margin: 0px;
+    font-weight: 600;
+}
 
 @media (max-width: 800px) {
     .usb-content {
         grid-template-columns: 1fr;
         max-width: 600px;
+    }
+
+    .checksum .illustration {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -1679,6 +1846,60 @@ footer .footer-line {
 
     100% {
         transform: translateX(-450%);
+        opacity: 0;
+    }
+}
+
+@keyframes checksumBox1 {
+    0%, 20% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    30%, 45% {
+        opacity: 1;
+    }
+
+    50%, 100% {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+}
+
+@keyframes checksumBox2 {
+    0%, 25% {
+        transform: translateY(0);
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    50%, 70% {
+        opacity: 1;
+    }
+
+    75%, 100% {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+}
+
+@keyframes checksumBox3 {
+    0%, 60% {
+        transform: translateY(0);
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    75%, 95% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(150px);
         opacity: 0;
     }
 }
