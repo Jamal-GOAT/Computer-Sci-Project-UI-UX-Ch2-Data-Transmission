@@ -194,59 +194,102 @@
     </div>
 
     <div class="check-digit">
-    <div class="title">
-        <h1 class="heading">Check Digit</h1>
-        <p class="subheading">
-            A check digit is used to check whether entered data is correct.
-        </p>
+        <div class="title">
+            <h1 class="heading">Check Digit</h1>
+            <p class="subheading">
+                A check digit is used to check whether entered data is correct.
+            </p>
+        </div>
+
+        <img src="../images/checkdigit.jpg" alt="">
+        <a style="margin: auto;color: var(--primary)" href="https://www.bing.com/images/search?view=detailV2&ccid=G8aJBKhW&id=3952CCDEFD1177738C5BEE0C796A049CD08915A0&thid=OIP.G8aJBKhWYZOTssBfD6ukQwHaEk&mediaurl=https%3a%2f%2f4.bp.blogspot.com%2f-BiCKuEmjgsM%2fXCn1F3N6bTI%2fAAAAAAAAALk%2fNY8UaffsYIQrxrujGSZFAqNp33ZDGWNEACLcBGAs%2fs1600%2fCheck%252Bdigit%252Bquestion.jpg&exph=322&expw=521&q=Check+Digit+Computer+Science+igcse&FORM=IRPRST&ck=426EF5D1159EA3DF99FDF3960C9AF416&selectedIndex=0&itb=0">This is an example of EAN-13 Check Digit</a>
+        
+        <div class="cards">
+            <div class="card">
+                <h1 class="number">01</h1>
+                <div class="content">
+                    <h2>Calculate</h2>
+                    <p>
+                        A check digit is calculated from the original data before it is entered.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="number">02</h1>
+                <div class="content">
+                    <h2>Enter Data</h2>
+                    <p>
+                        The data is entered, such as when a barcode is scanned.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="number">03</h1>
+                <div class="content">
+                    <h2>Recalculate</h2>
+                    <p>
+                        A new check digit is calculated from the data that was entered.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="number">04</h1>
+                <div class="content">
+                    <h2>Compare</h2>
+                    <p>
+                        The new check digit is compared with the stored check digit.
+                        If they match, the data is accepted. If they do not match, an error is detected.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <img src="../images/checkdigit.jpg" alt="">
-    <a style="margin: auto;color: var(--primary)" href="https://www.bing.com/images/search?view=detailV2&ccid=G8aJBKhW&id=3952CCDEFD1177738C5BEE0C796A049CD08915A0&thid=OIP.G8aJBKhWYZOTssBfD6ukQwHaEk&mediaurl=https%3a%2f%2f4.bp.blogspot.com%2f-BiCKuEmjgsM%2fXCn1F3N6bTI%2fAAAAAAAAALk%2fNY8UaffsYIQrxrujGSZFAqNp33ZDGWNEACLcBGAs%2fs1600%2fCheck%252Bdigit%252Bquestion.jpg&exph=322&expw=521&q=Check+Digit+Computer+Science+igcse&FORM=IRPRST&ck=426EF5D1159EA3DF99FDF3960C9AF416&selectedIndex=0&itb=0">This is an example of EAN-13 Check Digit</a>
-    
-    <div class="cards">
-        <div class="card">
-            <h1 class="number">01</h1>
-            <div class="content">
-                <h2>Calculate</h2>
-                <p>
-                    A check digit is calculated from the original data before it is entered.
-                </p>
-            </div>
+    <div class="arq-simulator">
+        <div class="title">
+            <h1>ARQ Timeout Simulator</h1>
+            <p><span style="font-weight: bold;">A</span>utomatic <span style="font-weight: bold;">R</span>epeat re<span style="font-weight: bold;">Q</span>uest is an error-control method that ensures data is transmitted correctly. The receiver sends an acknowledgement message known as ACK when the packet bypasses all of other error detection checks. It acts as like a confirmation message, and the sender waits. If the ACK isn't received to the sender yet after the timeout, the sender assumes that the packet was lost or corrupted, which then the sender will retransmits it.</p>
         </div>
+        
+        <button class="arq-button">Try ARQ</button>
 
-        <div class="card">
-            <h1 class="number">02</h1>
-            <div class="content">
-                <h2>Enter Data</h2>
-                <p>
-                    The data is entered, such as when a barcode is scanned.
-                </p>
+        <div class="arq-simulator-box">
+            <div class="arq-network">
+                <div class="sender">
+                    <h3>Sender</h3>
+                </div>
+
+                <div class="data-packet">
+                    DATA
+                </div>
+
+                <div class="line"></div>
+
+                <div class="ack-packet">
+                    ACK
+                </div>
+
+                <div class="arq-device receiver">
+                    <h3>Receiver</h3>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <h1 class="number">03</h1>
-            <div class="content">
-                <h2>Recalculate</h2>
-                <p>
-                    A new check digit is calculated from the data that was entered.
-                </p>
+            <div class="arq-timer-container">
+                <div class="timer-label">
+                    <span>Timeout Timer</span>
+                    <span id="timerText">0s</span>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <h1 class="number">04</h1>
-            <div class="content">
-                <h2>Compare</h2>
-                <p>
-                    The new check digit is compared with the stored check digit.
-                    If they match, the data is accepted. If they do not match, an error is detected.
-                </p>
+            <div class="arq-result" id="arqResult">
+                <h3>How ARQ works</h3>
+                <p>The sender sends a packet and waits for an ACK. If the ACK does not arrive before the timeout, the sender retransmits the packet.</p>
             </div>
         </div>
     </div>
-</div>
 
     <script src="../script.js"></script>
 </body>

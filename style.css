@@ -1469,6 +1469,70 @@ h2 {
     font-weight: 600;
 }
 
+
+.arq-simulator {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+    text-align: center;
+}
+
+.arq-network {
+    position: relative;
+}
+
+.arq-button {
+    padding: 15px 20px;
+    font-family: 'Poppins', serif;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    margin: 40px auto;
+}
+
+.arq-button:hover {
+    color: white;
+    background-color: var(--primary);
+}
+
+.arq-network .sender, .arq-network .receiver{
+    width: 120px;
+    height: 60px;
+    border: 2px solid var(--primary);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.arq-network .line {
+    display: block;
+    width: 4px;
+    height: 150px;
+    background: #D1D1D1;
+    margin: auto;
+}
+
+.arq-network .data-packet, .arq-network .ack-packet {
+    position: absolute;
+    display: flex;
+    justify-self: center;
+    padding: 10px 15px;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.arq-network .data-packet {
+    top: 10px;
+}
+
 @media (max-width: 800px) {
     .usb-content {
         grid-template-columns: 1fr;
