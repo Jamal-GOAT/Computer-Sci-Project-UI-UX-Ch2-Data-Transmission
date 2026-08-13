@@ -1529,6 +1529,10 @@ h2 {
     opacity: 0;
 }
 
+* {
+    outline: 2px solid red;
+}
+
 .arq-network .data-packet {
     top: 10px;
 }
