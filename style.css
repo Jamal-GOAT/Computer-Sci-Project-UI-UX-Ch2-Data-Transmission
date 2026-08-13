@@ -231,6 +231,10 @@ nav a.active {
     margin-bottom: 350px;
 }
 
+* {
+    outline: 2px solid red;
+}
+
 .data-packets-illustration .data .wrapper {
     display: flex;
     width: fit-content;
@@ -243,7 +247,7 @@ nav a.active {
     animation: wrapperPackage 10s linear infinite;
 }
 
-.data-packets-illustration .data .wrapper .package-left, .illustration .data .wrapper .package-right {
+.data-packets-illustration .data .wrapper .package-left, .data-packets-illustration .data .wrapper .package-right {
     display: flex;
     flex-direction: row;
     width: fit-content;
@@ -649,7 +653,7 @@ nav a.active {
 .serialtext .illustration .wrapper {
     display: flex;
     padding: 20px;
-    width: 400px;
+    width: 100%;
     flex-direction: row;
     justify-content: center;
     gap: 0px;

@@ -87,7 +87,7 @@ if (dataPacket && arqButton && ackPacket && timerLabel) {
 
 
         setTimeout(() => {
-            if (randomNumber < 10) {
+            if (randomNumber + 3 < 10) {
                 clearInterval(countdown);
                 ackPacket.classList.add("animate");
                 setTimeout(()=>{
