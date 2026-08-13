@@ -197,7 +197,7 @@ nav a.active {
     opacity: 1;
 }
 
-.data-packets-hero, .transmission-methods-hero, .error-detection-hero {
+.data-packets-hero, .transmission-methods-hero, .error-detection-hero, .encryption-hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -205,7 +205,7 @@ nav a.active {
     filter: drop-shadow(0px 10px 2px rgba(0, 0, 0, 0.25));
 }
 
-.data-packets-heading, .transmission-methods-heading, .error-detection-heading {
+.data-packets-heading, .transmission-methods-heading, .error-detection-heading, .encryption-heading {
     font-size: clamp(30px, 5vw, 50px);
     font-weight: 600;
     margin-bottom: 10px;
@@ -213,7 +213,7 @@ nav a.active {
     text-align: center;
 }
 
-.data-packets-subheading, .transmission-methods-subheading , .error-detection-subheading{
+.data-packets-subheading, .transmission-methods-subheading , .error-detection-subheading, .encryption-subheading{
     font-size: clamp(12px, 2vw, 17px);
     font-weight: 400;
     margin-bottom: 50px;
@@ -1486,6 +1486,7 @@ h2 {
 
 .arq-network {
     position: relative;
+    margin-bottom: 50px;
 }
 
 .arq-button {
@@ -1513,12 +1514,14 @@ h2 {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    font-size: 11px;
+    font-weight: normal;
 }
 
 .arq-network .line {
     display: block;
     width: 4px;
-    height: 150px;
+    height: 300px;
     background: #D1D1D1;
     margin: auto;
 }
@@ -1530,15 +1533,29 @@ h2 {
     padding: 10px 15px;
     border: 2px solid var(--primary);
     border-radius: 10px;
+    background-color: white;
     opacity: 0;
-}
-
-* {
-    outline: 2px solid blue;
 }
 
 .arq-network .data-packet {
     top: 10px;
+}
+
+.arq-network .data-packet.animate {
+    animation: arqDataPacket 2s ease;
+}
+
+.arq-network .ack-packet.animate {
+    animation: ackPacket 3s ease;
+}
+
+.arq-simulator .arq-timer-container .timer-text{
+    font-weight: bold;
+}
+
+.arq-result h2 {
+    margin-top: 50px;
+    font-size: clamp(20px, 3.3vw, 27px);
 }
 
 @media (max-width: 800px) {
@@ -1977,5 +1994,57 @@ footer .footer-line {
     100% {
         transform: translateY(150px);
         opacity: 0;
+    }
+}
+
+@keyframes arqDataPacket {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(0px);
+    }
+
+    5% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    10%, 85% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(320px);
+    }
+}
+
+@keyframes ackPacket {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(0px);
+    }
+
+    5% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    10%, 85% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-320px);
     }
 }
