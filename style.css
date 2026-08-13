@@ -783,6 +783,10 @@ nav a.active {
 }
 
 .duplex .title {
+    width: 90vw;
+    min-width: 260px;
+    max-width: 850px;
+    margin: auto;
     filter: drop-shadow(0px 10px 2px rgba(0, 0, 0, 0.25));
 }
 
@@ -1189,7 +1193,7 @@ h2 {
 }
 
 .echo-check .connection {
-    width: 260px;
+    width: 210px;
     height: 80px;
     position: relative;
     display: flex;
